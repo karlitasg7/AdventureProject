@@ -18,10 +18,6 @@ A web application with a CRUD for Employees and a report for sales history using
 - Delete existing employee
 - View sales report by employee
 
-## Background
-
-It's a project to develop a CRUD for Employees and a report of sales history for test the abilities about programming
-
 ## Overview
 
 I need an API to get all information from the database and a web application to show the options to the user
@@ -32,7 +28,33 @@ This database has the schema and data ready to use
 
 ## Detailed Design
 
-**Database**
+_____
+
+### High Level Design Diagram:
+
+![High Level Design](./HighLevelDesign.png)
+
+_____
+
+### Mock up web app
+
+- Employee List
+
+![Employee List](./Design_EmployeeList.png)
+
+- Modal to create / update employee
+
+![Employee create update](./Design_CreateUpdate.png)
+
+- Option to confirm employee deletion
+
+![Employee Delete](./Design_Delete.png)
+
+- Sales report by employee
+
+![Employee Sales Report](./Design_SalesReport.png)
+
+### Database
 _____
 
 - ER Diagram https://www.w3resource.com/sql-exercises/adventureworks/index.php
@@ -130,7 +152,14 @@ _____
 
 ```sql
 SELECT t0.OrderDate
-     , t0.Status
+     , CASE
+         WHEN t0.Status = 1 THEN 'In process'
+         WHEN t0.Status = 2 THEN 'Approved'
+         WHEN t0.Status = 3 THEN 'Back Ordered'
+         WHEN t0.Status = 4 THEN 'Rejected'
+         WHEN t0.Status = 5 THEN 'Shipped'
+         WHEN t0.Status = 6 THEN 'Cancelled'
+    END                                                                                      AS statusName
      , t0.AccountNumber
      , CONCAT(t1.AddressLine1, ' ', t1.City, ' ', t2.Name, ' ', t1.PostalCode, ' ', t3.Name) AS address
      , t0.SubTotal
