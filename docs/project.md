@@ -2,9 +2,9 @@
 
 Author(s): Karla Sequen
 
-Status: [Draft]
+Status: [Ready for review]
 
-Last Updated: 2023-06-26
+Last Updated: 2023-06-27
 
 ## Objective
 
@@ -55,6 +55,7 @@ _____
 ![Employee Sales Report](./Design_SalesReport.png)
 
 ### Database
+
 _____
 
 - ER Diagram https://www.w3resource.com/sql-exercises/adventureworks/index.php
@@ -153,13 +154,13 @@ _____
 ```sql
 SELECT t0.OrderDate
      , CASE
-         WHEN t0.Status = 1 THEN 'In process'
-         WHEN t0.Status = 2 THEN 'Approved'
-         WHEN t0.Status = 3 THEN 'Back Ordered'
-         WHEN t0.Status = 4 THEN 'Rejected'
-         WHEN t0.Status = 5 THEN 'Shipped'
-         WHEN t0.Status = 6 THEN 'Cancelled'
-    END                                                                                      AS statusName
+           WHEN t0.Status = 1 THEN 'In process'
+           WHEN t0.Status = 2 THEN 'Approved'
+           WHEN t0.Status = 3 THEN 'Back Ordered'
+           WHEN t0.Status = 4 THEN 'Rejected'
+           WHEN t0.Status = 5 THEN 'Shipped'
+           WHEN t0.Status = 6 THEN 'Cancelled'
+        END                                                                                  AS statusName
      , t0.AccountNumber
      , CONCAT(t1.AddressLine1, ' ', t1.City, ' ', t2.Name, ' ', t1.PostalCode, ' ', t3.Name) AS address
      , t0.SubTotal
@@ -200,8 +201,8 @@ For the API, I need to add the next endpoints:
 | Method | Path                 | Description                                     | Response Code |
 |--------|----------------------|-------------------------------------------------|---------------|
 | POST   | Employees            | Add new employee                                | 201           |
-| PUT    | Employees\{id}       | Update existing employee                        | 200           |
-| DELETE | Employees\{id}       | delete existing employee                        | 200           |
+| PUT    | Employees\\{id}      | Update existing employee                        | 200           |
+| DELETE | Employees\\{id}      | delete existing employee                        | 200           |
 | GET    | Employees            | Get list of active active                       | 200           |
 | GET    | Employee\\{id}\Sales | List of sales report by employee                | 200           |
 | GET    | Departments          | Departments List from HumanResources.Department | 200           |
