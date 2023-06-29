@@ -2,9 +2,9 @@
 
 Author(s): Karla Sequen
 
-Status: [Ready for review]
+Status: [Reviewed]
 
-Last Updated: 2023-06-27
+Last Updated: 2023-06-28
 
 ## Objective
 
@@ -165,7 +165,7 @@ SELECT t0.OrderDate
      , CONCAT(t1.AddressLine1, ' ', t1.City, ' ', t2.Name, ' ', t1.PostalCode, ' ', t3.Name) AS address
      , t0.SubTotal
      , t0.TaxAmt
-     , t0.TotalDue
+     , t0.SubTotal + t0.TaxAmt                                                               AS total
 FROM Sales.SalesOrderHeader t0
          JOIN Person.Address t1
               ON t0.BillToAddressID = t1.AddressID
@@ -177,11 +177,6 @@ WHERE t0.CurrencyRateID IS NULL -- necessary to show only sales from US in $
   AND t0.OrderDate BETWEEN '2012-01-01' AND '2023-01-01'
   AND t0.SalesPersonID = 279; -- employee ID
 ```
-
-TODO:
-
-- Which date is necessary to use for the filters? OrderDate, DueDate or ShipDate
-- For the total includes the Freight value, is it necessary to add that column?
 
 ## Solution
 
