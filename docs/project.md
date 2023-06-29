@@ -193,13 +193,13 @@ WHERE t0.CurrencyRateID IS NULL -- necessary to show only sales from US in $
 ____
 For the API, I need to add the next endpoints:
 
-| Method | Path                 | Description                                     | Response Code |
-|--------|----------------------|-------------------------------------------------|---------------|
-| POST   | Employees            | Add new employee                                | 201           |
-| PUT    | Employees\\{id}      | Update existing employee                        | 200           |
-| DELETE | Employees\\{id}      | delete existing employee                        | 200           |
-| GET    | Employees            | Get list of active active                       | 200           |
-| GET    | Employee\\{id}\Sales | List of sales report by employee                | 200           |
-| GET    | Departments          | Departments List from HumanResources.Department | 200           |
-| GET    | Shifts               | Shifts List from HumanResources.Shift           | 200           |
-| GET    | Provinces            | Provinces List from Person.StateProvince        | 200           |
+| Method | Path                  | Description                                     | Response Code |
+|--------|-----------------------|-------------------------------------------------|---------------|
+| POST   | Employees             | Add new employee                                | 201           |
+| PUT    | Employees\\{id}       | Update existing employee                        | 200           |
+| DELETE | Employees\\{id}       | delete existing employee                        | 200           |
+| GET    | Employees             | Get list of active active                       | 200           |
+| GET    | Employees\\{id}\Sales | List of sales report by employee                | 200           |
+| GET    | Departments           | Departments List from HumanResources.Department | 200           |
+| GET    | Shifts                | Shifts List from HumanResources.Shift           | 200           |
+| GET    | Provinces             | Provinces List from Person.StateProvince        | 200           |
