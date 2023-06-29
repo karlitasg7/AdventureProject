@@ -4,7 +4,7 @@ import com.ks.adventure.dto.ShiftDTO;
 
 import java.util.List;
 
-public interface ShiftsRepository {
+public interface ShiftRepository {
 
     List<ShiftDTO> findAll();
 
