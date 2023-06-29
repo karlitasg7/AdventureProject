@@ -9,7 +9,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
-final class TestProjectDeleterShould extends EmployeeModuleUnitTestCase {
+final class TestEmployeeDeleterShould extends EmployeeModuleUnitTestCase {
 
     @Test
     void deleteAndExistingEmployee() throws EntityNotFoundException {
@@ -20,7 +20,7 @@ final class TestProjectDeleterShould extends EmployeeModuleUnitTestCase {
 
         employeeDeleter.delete(employeeId);
 
-        verify(repository, times(1)).existById(employeeId);
+        verify(repository, times(1)).delete(employeeId);
 
     }
 
