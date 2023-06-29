@@ -1,4 +1,4 @@
-package com.karlasequen.adventure.business;
+package com.ks.adventure.business;
 
 import lombok.Data;
 

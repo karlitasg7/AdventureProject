@@ -1,12 +1,12 @@
-package com.karlasequen.adventure.controller;
+package com.ks.adventure.controller;
 
-import com.karlasequen.adventure.business.EmployeeRequest;
-import com.karlasequen.adventure.business.create.EmployeeCreator;
-import com.karlasequen.adventure.business.delete.EmployeeDeleter;
-import com.karlasequen.adventure.business.find.EmployeeFinder;
-import com.karlasequen.adventure.business.update.EmployeeUpdater;
-import com.karlasequen.adventure.dto.EmployeeDTO;
-import com.karlasequen.adventure.exceptions.EntityNotPersistedException;
+import com.ks.adventure.business.EmployeeRequest;
+import com.ks.adventure.business.create.EmployeeCreator;
+import com.ks.adventure.business.delete.EmployeeDeleter;
+import com.ks.adventure.business.find.EmployeeFinder;
+import com.ks.adventure.business.update.EmployeeUpdater;
+import com.ks.adventure.dto.EmployeeDTO;
+import com.ks.adventure.exceptions.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +37,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Integer> update(@PathVariable Integer id, @RequestBody EmployeeRequest request) throws EntityNotPersistedException {
+    public ResponseEntity<Integer> update(@PathVariable Integer id, @RequestBody EmployeeRequest request) throws EntityNotFoundException {
 
         employeeUpdater.update(id, request);
 
@@ -45,7 +45,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Integer> delete(@PathVariable Integer id) throws EntityNotPersistedException {
+    public ResponseEntity<Integer> delete(@PathVariable Integer id) throws EntityNotFoundException {
 
         employeeDeleter.delete(id);
 

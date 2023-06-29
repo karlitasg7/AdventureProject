@@ -1,7 +1,7 @@
-package com.karlasequen.adventure.business.delete;
+package com.ks.adventure.business.delete;
 
-import com.karlasequen.adventure.business.repository.EmployeeRepository;
-import com.karlasequen.adventure.exceptions.EntityNotPersistedException;
+import com.ks.adventure.business.repository.EmployeeRepository;
+import com.ks.adventure.exceptions.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,11 +13,11 @@ public class EmployeeDeleter {
         this.employeeRepository = employeeRepository;
     }
 
-    public void delete(Integer id) throws EntityNotPersistedException {
+    public void delete(Integer id) throws EntityNotFoundException {
 
         employeeRepository
                 .existById(id)
-                .orElseThrow(() -> new EntityNotPersistedException("Employee not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Employee not found"));
 
         employeeRepository.delete(id);
 

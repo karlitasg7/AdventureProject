@@ -1,7 +1,7 @@
-package com.karlasequen.adventure.business.find;
+package com.ks.adventure.business.find;
 
-import com.karlasequen.adventure.business.repository.EmployeeRepository;
-import com.karlasequen.adventure.dto.EmployeeDTO;
+import com.ks.adventure.business.repository.EmployeeRepository;
+import com.ks.adventure.dto.EmployeeDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

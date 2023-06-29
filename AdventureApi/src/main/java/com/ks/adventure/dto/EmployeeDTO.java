@@ -1,4 +1,4 @@
-package com.karlasequen.adventure.dto;
+package com.ks.adventure.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
