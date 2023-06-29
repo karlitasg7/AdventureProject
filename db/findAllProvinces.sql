@@ -1,4 +1,4 @@
-CREATE OR ALTER PROCEDURE HumanResources.findAllProvince
+CREATE OR ALTER PROCEDURE HumanResources.findAllProvinces
     AS
 BEGIN
     SET NOCOUNT ON;
