@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost;databaseName=AdventureWorks2022;trustServerCertificate=true;
+    username: sa
+    password: Karla123*
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 5
+      auto-commit: false
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        physical_naming_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit_naming_strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+        dialect: org.hibernate.dialect.SQLServer2016Dialect
+        format-sql: true
