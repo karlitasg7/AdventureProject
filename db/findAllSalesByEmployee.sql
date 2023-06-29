@@ -5,7 +5,7 @@ CREATE OR ALTER PROCEDURE HumanResources.findAllSalesByEmployee @BusinessEmploye
 BEGIN
     SET NOCOUNT ON;
 
-SELECT t0.OrderDate
+SELECT CAST(t0.OrderDate AS DATE)                                                            AS OrderDate
      , CASE
            WHEN t0.Status = 1 THEN 'In process'
            WHEN t0.Status = 2 THEN 'Approved'
