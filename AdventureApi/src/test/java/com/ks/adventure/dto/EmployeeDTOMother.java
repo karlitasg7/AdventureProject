@@ -1,4 +1,4 @@
-package com.ks.adventure;
+package com.ks.adventure.dto;
 
 import com.ks.adventure.dto.EmployeeDTO;
 import com.ks.adventure.shared.IntegerMother;

@@ -1,6 +1,6 @@
 package com.ks.adventure.find;
 
-import com.ks.adventure.EmployeeDTOMother;
+import com.ks.adventure.dto.EmployeeDTOMother;
 import com.ks.adventure.dto.EmployeeDTO;
 import com.ks.adventure.shared.EmployeeModuleUnitTestCase;
 import org.junit.jupiter.api.Test;
