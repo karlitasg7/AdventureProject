@@ -15,7 +15,7 @@ public class EmployeeDTO {
     Integer departmentId;
     String department;
     LocalDate startDate;
-    LocalDate birtDay;
+    LocalDate birthDay;
     String phoneNumber;
     String emailAddress;
     String address;
