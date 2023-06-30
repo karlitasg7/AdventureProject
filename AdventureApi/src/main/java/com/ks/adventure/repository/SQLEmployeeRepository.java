@@ -148,13 +148,22 @@ public class SQLEmployeeRepository implements EmployeeRepository {
                 ((Number) tuple[0]).intValue(),
                 tuple[1].toString(),
                 tuple[2].toString(),
-                ((Number) tuple[3]).intValue(),
+                tuple[3].toString(),
                 tuple[4].toString(),
-                ((Date) tuple[5]).toLocalDate(),
-                ((Date) tuple[6]).toLocalDate(),
-                tuple[7].toString(),
-                tuple[8].toString(),
-                tuple[9].toString()
+                ((Number) tuple[5]).intValue(),
+                tuple[6].toString(),
+                ((Date) tuple[7]).toLocalDate(),
+                ((Date) tuple[8]).toLocalDate(),
+                tuple[9].toString(),
+                ((Number) tuple[10]).intValue(),
+                tuple[11].toString(),
+                tuple[12].toString(),
+                tuple[13].toString(),
+                tuple[14].toString(),
+                ((Number) tuple[15]).intValue(),
+                tuple[16].toString(),
+                tuple[17].toString(),
+                tuple[18].toString()
         );
     }
 

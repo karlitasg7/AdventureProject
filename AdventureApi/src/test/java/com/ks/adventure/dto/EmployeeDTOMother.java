@@ -1,6 +1,5 @@
 package com.ks.adventure.dto;
 
-import com.ks.adventure.dto.EmployeeDTO;
 import com.ks.adventure.shared.IntegerMother;
 import com.ks.adventure.shared.WordMother;
 
@@ -13,10 +12,19 @@ public class EmployeeDTOMother {
                 IntegerMother.random(),
                 WordMother.random(),
                 WordMother.random(),
+                WordMother.random(),
+                WordMother.random(),
                 IntegerMother.random(),
                 WordMother.random(),
                 LocalDate.now(),
                 LocalDate.now(),
+                WordMother.random(),
+                IntegerMother.random(),
+                WordMother.random(),
+                WordMother.random(),
+                WordMother.random(),
+                WordMother.random(),
+                IntegerMother.random(),
                 WordMother.random(),
                 WordMother.random(),
                 WordMother.random()

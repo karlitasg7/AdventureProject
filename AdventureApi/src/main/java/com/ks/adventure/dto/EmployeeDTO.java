@@ -10,14 +10,23 @@ import java.time.LocalDate;
 public class EmployeeDTO {
 
     Integer employeeId;
-    String name;
+    String firstName;
+    String middleName;
+    String lastName;
     String jobTitle;
     Integer departmentId;
     String department;
     LocalDate startDate;
     LocalDate birthDay;
     String phoneNumber;
+    Integer emailAddressId;
     String emailAddress;
-    String address;
+    String addressLine1;
+    String addressLine2;
+    String city;
+    Integer provinceId;
+    String province;
+    String postalCode;
+    String country;
 
 }
