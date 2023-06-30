@@ -1,0 +1,10 @@
+<div class="delete-confirmation">
+  <div mat-dialog-content>
+    <p>Are you sure you want to delete the employee</p>
+    <p>{{data.employeeName}}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" cdkFocusInitial>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" color="warn">Confirm</button>
+  </div>
+</div>
