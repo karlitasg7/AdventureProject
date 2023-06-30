@@ -17,4 +17,4 @@ The project contains unit test for the business use case
 
 ### About the repositories
 
-All the repositories are implemented to use stored procedures
+All the repositories are implemented using stored procedures
