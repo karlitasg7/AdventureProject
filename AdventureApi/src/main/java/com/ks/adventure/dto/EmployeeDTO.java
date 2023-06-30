@@ -28,5 +28,6 @@ public class EmployeeDTO {
     String province;
     String postalCode;
     String country;
+    Integer shiftID;
 
 }

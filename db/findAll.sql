@@ -22,6 +22,7 @@ SELECT t0.BusinessEntityID
      , t8.Name                       AS province
      , t7.PostalCode
      , t9.Name                       AS country
+     , t2.ShiftID
 FROM HumanResources.Employee                           t0
          JOIN Person.Person                            t1
               ON t0.BusinessEntityID = t1.BusinessEntityID

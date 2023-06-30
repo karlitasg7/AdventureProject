@@ -163,7 +163,8 @@ public class SQLEmployeeRepository implements EmployeeRepository {
                 ((Number) tuple[15]).intValue(),
                 tuple[16].toString(),
                 tuple[17].toString(),
-                tuple[18].toString()
+                tuple[18].toString(),
+                ((Number) tuple[19]).intValue()
         );
     }
 

@@ -27,7 +27,8 @@ public class EmployeeDTOMother {
                 IntegerMother.random(),
                 WordMother.random(),
                 WordMother.random(),
-                WordMother.random()
+                WordMother.random(),
+                IntegerMother.random()
         );
     }
 
