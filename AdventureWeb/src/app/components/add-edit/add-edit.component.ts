@@ -12,13 +12,7 @@ import {ApiService} from '../../api.service';
 export class AddEditComponent implements OnInit {
   empForm: FormGroup;
 
-  education: string[] = [
-    'Matric',
-    'Diploma',
-    'Intermediate',
-    'Graduate',
-    'Post Graduate',
-  ];
+  changePosition = false;
 
   provinces!: any[];
   departments!: any[];
@@ -31,6 +25,11 @@ export class AddEditComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _coreService: CoreService
   ) {
+
+    if (!data) {
+      this.changePosition = true;
+    }
+
     this.empForm = this._fb.group({
       employeeId: '',
       firstName: '',
@@ -99,11 +98,16 @@ export class AddEditComponent implements OnInit {
   onFormSubmit() {
     if (this.empForm.valid) {
       if (this.data) {
+
+        if (!this.changePosition) {
+          this.empForm.value.departmentId = 0;
+        }
+
         this.apiService
-          .updateEmployee(this.data.id, this.empForm.value)
+          .updateEmployee(this.data.employeeId, this.empForm.value)
           .subscribe({
             next: (val: any) => {
-              this._coreService.openSnackBar('Employee detail updated!');
+              this._coreService.openSnackBar('Employee updated!');
               this._dialogRef.close(true);
             },
             error: (err: any) => {
