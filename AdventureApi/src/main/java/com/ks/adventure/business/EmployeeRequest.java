@@ -25,6 +25,5 @@ public class EmployeeRequest {
     Integer departmentId;
     Integer shiftId;
     LocalDate startDate;
-    Boolean changeJobPosition;
 
 }
