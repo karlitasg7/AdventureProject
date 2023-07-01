@@ -119,16 +119,19 @@
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Job Title</mat-label>
-        <input matInput type="text" formControlName="jobTitle" [readonly]="!changePosition" required>
+        <input matInput type="text" formControlName="jobTitle" required>
       </mat-form-field>
 
-      <div class="change-position" *ngIf="data" (click)="changePosition = !changePosition">Change Position</div>
+      <div class="change-position" *ngIf="data" (click)="setChangePosition()">
+        <span *ngIf="!changePosition">Change Position</span>
+        <span *ngIf="changePosition">Cancel</span>
+      </div>
     </div>
 
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Department</mat-label>
-        <mat-select formControlName="departmentId" [disabled]="!changePosition" required>
+        <mat-select formControlName="departmentId" required>
           <mat-option *ngFor="let val of departments" [value]="val.id">{{val.name}}
           </mat-option>
         </mat-select>
@@ -136,7 +139,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Shift</mat-label>
-        <mat-select formControlName="shiftID" [disabled]="!changePosition" required>
+        <mat-select formControlName="shiftID" required>
           <mat-option *ngFor="let val of shifts" [value]="val.id">{{val.name}}
           </mat-option>
         </mat-select>
@@ -144,7 +147,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Start date</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="startDate" [disabled]="!changePosition" required>
+        <input matInput [matDatepicker]="picker" formControlName="startDate" required>
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -152,8 +155,10 @@
     </div>
 
   </div>
+
   <div mat-dialog-actions class="action">
     <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
     <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
   </div>
+
 </form>

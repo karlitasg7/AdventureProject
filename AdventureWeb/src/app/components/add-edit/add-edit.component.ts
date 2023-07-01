@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {CoreService} from '../../core/core.service';
 import {ApiService} from '../../api.service';
@@ -35,10 +35,10 @@ export class AddEditComponent implements OnInit {
       firstName: '',
       middleName: '',
       lastName: '',
-      jobTitle: '',
-      departmentId: '',
+      jobTitle: new FormControl({value: '', disabled: !this.changePosition}, Validators.required),
+      departmentId: new FormControl({value: '', disabled: !this.changePosition}, Validators.required),
       department: '',
-      startDate: '',
+      startDate: new FormControl({value: '', disabled: !this.changePosition}, Validators.required),
       birthDay: '',
       phoneNumber: '',
       emailAddressId: '',
@@ -50,7 +50,7 @@ export class AddEditComponent implements OnInit {
       province: '',
       postalCode: '',
       country: '',
-      shiftID: '',
+      shiftID: new FormControl({value: '', disabled: !this.changePosition}, Validators.required),
     });
 
     this.getProvincesList();
@@ -95,12 +95,51 @@ export class AddEditComponent implements OnInit {
       });
   }
 
+  setChangePosition() {
+    this.changePosition = !this.changePosition;
+
+    if (this.changePosition) {
+      this.empForm.get('jobTitle')?.enable();
+      this.empForm.get('departmentId')?.enable();
+      this.empForm.get('shiftID')?.enable();
+      this.empForm.get('startDate')?.enable();
+    } else {
+      this.empForm.get('jobTitle')?.disable();
+      this.empForm.get('departmentId')?.disable();
+      this.empForm.get('shiftID')?.disable();
+      this.empForm.get('startDate')?.disable();
+    }
+
+  }
+
   onFormSubmit() {
     if (this.empForm.valid) {
       if (this.data) {
 
         if (!this.changePosition) {
           this.empForm.value.departmentId = 0;
+        } else {
+
+          if (this.data.departmentId == this.empForm.value.departmentId) {
+            this._coreService.openSnackBar('You need to select a different department');
+            return;
+          }
+
+          if (this.data.jobTitle == this.empForm.value.jobTitle) {
+            this._coreService.openSnackBar('You need to set a different job title');
+            return;
+          }
+
+          if (this.data.startDate == this.empForm.value.startDate) {
+            this._coreService.openSnackBar('You need to select a different start date');
+            return;
+          }
+
+          if (this.empForm.value.startDate <= this.data.star) {
+            this._coreService.openSnackBar('The start date must be greater than the current');
+            return;
+          }
+
         }
 
         this.apiService
