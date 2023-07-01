@@ -75,11 +75,11 @@ export class AppComponent implements OnInit {
     });
   }
 
-  deleteEmployee(id: number, name: string) {
+  deleteEmployee(id: number, firstName: string, lastName: string) {
 
     const dialogRef = this.dialog.open(DeleteConfirmationComponent, {
       width: '300px',
-      data: {employeeName: name},
+      data: {employeeName: firstName + ' ' + lastName},
     });
 
     dialogRef

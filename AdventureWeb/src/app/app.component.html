@@ -59,7 +59,7 @@
           <button mat-icon-button color="primary" (click)="openEditForm(row)" matTooltip="Update">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn" (click)="deleteEmployee(row.employeeId, row.name)" matTooltip="Delete">
+          <button mat-icon-button color="warn" (click)="deleteEmployee(row.employeeId, row.firstName, row.lastName)" matTooltip="Delete">
             <mat-icon>delete</mat-icon>
           </button>
           <button mat-icon-button (click)="showSalesReport(row.employeeId)" matTooltip="Sales Report">
