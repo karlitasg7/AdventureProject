@@ -1,10 +1,10 @@
 CREATE OR ALTER PROCEDURE HumanResources.findAllProvinces
-    AS
+AS
 BEGIN
     SET NOCOUNT ON;
 
-SELECT StateProvinceID, Name
-FROM Person.StateProvince
-ORDER BY Name;
+    SELECT StateProvinceID, Name
+    FROM Person.StateProvince
+    ORDER BY Name;
 
 END

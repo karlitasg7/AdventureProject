@@ -1,10 +1,10 @@
 CREATE OR ALTER PROCEDURE HumanResources.findAllShifts
-    AS
+AS
 BEGIN
     SET NOCOUNT ON;
 
-SELECT ShiftID, Name
-FROM HumanResources.Shift
-ORDER BY Name;
+    SELECT ShiftID, Name
+    FROM HumanResources.Shift
+    ORDER BY Name;
 
 END

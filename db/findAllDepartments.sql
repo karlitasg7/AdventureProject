@@ -1,10 +1,10 @@
 CREATE OR ALTER PROCEDURE HumanResources.findAllDepartments
-    AS
+AS
 BEGIN
     SET NOCOUNT ON;
 
-SELECT DepartmentID, Name
-FROM HumanResources.Department
-ORDER BY Name;
+    SELECT DepartmentID, Name
+    FROM HumanResources.Department
+    ORDER BY Name;
 
 END

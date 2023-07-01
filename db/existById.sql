@@ -1,10 +1,10 @@
 CREATE OR ALTER PROCEDURE HumanResources.existById @BusinessEntityID INT
-    AS
+AS
 BEGIN
     SET NOCOUNT ON;
 
-SELECT COUNT(BusinessEntityID)
-FROM HumanResources.Employee
-WHERE BusinessEntityID = @BusinessEntityID;
+    SELECT COUNT(BusinessEntityID)
+    FROM HumanResources.Employee
+    WHERE BusinessEntityID = @BusinessEntityID;
 
 END
