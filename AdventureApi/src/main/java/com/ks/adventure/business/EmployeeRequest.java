@@ -10,7 +10,7 @@ public class EmployeeRequest {
     String firstName;
     String middleName;
     String lastName;
-    LocalDate birthday;
+    LocalDate birthDay;
 
     String phoneNumber;
     String emailAddress;

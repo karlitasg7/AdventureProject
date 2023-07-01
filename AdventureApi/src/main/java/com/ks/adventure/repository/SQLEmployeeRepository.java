@@ -37,7 +37,7 @@ public class SQLEmployeeRepository implements EmployeeRepository {
         storedProcedureQuery.setParameter("JobTitle", employeeRequest.getJobTitle());
 
         storedProcedureQuery.registerStoredProcedureParameter("BirthDay", Date.class, ParameterMode.IN);
-        storedProcedureQuery.setParameter("BirthDay", employeeRequest.getBirthday());
+        storedProcedureQuery.setParameter("BirthDay", employeeRequest.getBirthDay());
 
         storedProcedureQuery.registerStoredProcedureParameter("PhoneNumber", String.class, ParameterMode.IN);
         storedProcedureQuery.setParameter("PhoneNumber", employeeRequest.getPhoneNumber());

@@ -15,7 +15,7 @@ public class EmployeeRequestMother {
         employeeRequest.setFirstName(WordMother.random());
         employeeRequest.setMiddleName(WordMother.random());
         employeeRequest.setLastName(WordMother.random());
-        employeeRequest.setBirthday(LocalDate.now());
+        employeeRequest.setBirthDay(LocalDate.now());
         employeeRequest.setPhoneNumber(WordMother.random());
         employeeRequest.setEmailAddress(WordMother.random());
         employeeRequest.setAddressLine1(WordMother.random());
