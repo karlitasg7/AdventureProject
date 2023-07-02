@@ -23,7 +23,7 @@ public class EmployeeRequest {
 
     String jobTitle;
     Integer departmentId;
-    Integer shiftId;
+    Integer shiftID;
     LocalDate startDate;
 
 }

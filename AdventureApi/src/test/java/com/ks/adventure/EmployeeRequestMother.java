@@ -26,7 +26,7 @@ public class EmployeeRequestMother {
         employeeRequest.setProvinceId(IntegerMother.random());
         employeeRequest.setJobTitle(WordMother.random());
         employeeRequest.setDepartmentId(IntegerMother.random());
-        employeeRequest.setShiftId(IntegerMother.random());
+        employeeRequest.setShiftID(IntegerMother.random());
         employeeRequest.setStartDate(LocalDate.now());
 
         return employeeRequest;

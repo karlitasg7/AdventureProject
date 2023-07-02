@@ -64,7 +64,7 @@ public class SQLEmployeeRepository implements EmployeeRepository {
         storedProcedureQuery.setParameter("DepartmentId", employeeRequest.getDepartmentId());
 
         storedProcedureQuery.registerStoredProcedureParameter("ShiftID", Integer.class, ParameterMode.IN);
-        storedProcedureQuery.setParameter("ShiftID", employeeRequest.getShiftId());
+        storedProcedureQuery.setParameter("ShiftID", employeeRequest.getShiftID());
 
         storedProcedureQuery.registerStoredProcedureParameter("StartDate", Date.class, ParameterMode.IN);
         storedProcedureQuery.setParameter("StartDate", employeeRequest.getStartDate());
