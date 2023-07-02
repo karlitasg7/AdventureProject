@@ -42,7 +42,7 @@ export class AddEditComponent implements OnInit {
       birthDay: '',
       phoneNumber: '',
       emailAddressId: '',
-      emailAddress: '',
+      emailAddress: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')]],
       addressLine1: '',
       addressLine2: '',
       city: '',

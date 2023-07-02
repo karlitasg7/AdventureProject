@@ -56,7 +56,8 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Email Address</mat-label>
-        <input matInput type="email" formControlName="emailAddress" required>
+        <input id="emailAddress" matInput type="email" formControlName="emailAddress" required>
+        <mat-error *ngIf="empForm.get('emailAddress')?.errors">Enter a valid email</mat-error>
       </mat-form-field>
     </div>
 
