@@ -7,7 +7,7 @@ BEGIN
     SET NOCOUNT ON;
 
     UPDATE HumanResources.EmployeeDepartmentHistory
-    SET EndDate = DATEADD(DD, -1, @StartDate)
+    SET EndDate = @StartDate
     WHERE BusinessEntityID = @BusinessEntityID
       AND EndDate IS NULL;
 
