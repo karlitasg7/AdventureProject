@@ -23,12 +23,14 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {SalesReportComponent} from './components/sales-report/sales-report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEditComponent,
-    DeleteConfirmationComponent
+    DeleteConfirmationComponent,
+    SalesReportComponent
   ],
   imports: [
     BrowserModule,
