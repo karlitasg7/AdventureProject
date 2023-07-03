@@ -63,7 +63,8 @@
                   matTooltip="Delete">
             <mat-icon>delete</mat-icon>
           </button>
-          <button mat-icon-button (click)="showSalesReport(row.employeeId)" matTooltip="Sales Report">
+          <button mat-icon-button (click)="showSalesReport(row.employeeId, row.firstName, row.lastName)"
+                  matTooltip="Sales Report">
             <mat-icon>assessment</mat-icon>
           </button>
         </td>

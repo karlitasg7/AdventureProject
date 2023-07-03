@@ -115,11 +115,11 @@ export class AppComponent implements OnInit {
     });
   }
 
-  showSalesReport(id: number) {
+  showSalesReport(id: number, firstName: string, lastName: string) {
     this.dialog.open(SalesReportComponent, {
-      width: '800px',
-      height: '600px',
-      data: {employeeId: id},
+      width: '1200px',
+      height: '700px',
+      data: {employeeId: id, employeeName: firstName + ' ' + lastName},
     });
 
   }

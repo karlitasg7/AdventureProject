@@ -28,7 +28,7 @@ export class ApiService {
     return this.http.delete(`${this.apiUrl}Employees/${id}`);
   }
 
-  getSalesByEmployee(employee: number, startDate: Date, endDate: Date): Observable<any> {
+  getSalesByEmployee(employee: number, startDate?: string | null, endDate?: string | null): Observable<any> {
     return this.http.get(`${this.apiUrl}Employees/${employee}/Sales?startDate=${startDate}&endDate=${endDate}`);
   }
 
