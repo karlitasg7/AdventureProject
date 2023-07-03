@@ -5,5 +5,6 @@ Check each component for more details:
 | Component        | View                                     |
 |------------------|------------------------------------------|
 | Design details   | [project](./docs/project.md)             |
-| API              | [AdventureApi](./AdventureApi/README.md) |
 | Database Scripts | [DataBase](./db)                         |
+| API              | [AdventureApi](./AdventureApi/README.md) |
+| Web App          | [AdventureWeb](./AdventureWeb/README.md) |
