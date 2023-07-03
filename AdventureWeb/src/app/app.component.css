@@ -16,3 +16,13 @@ mat-form-field {
   display: flex;
   gap: 5px;
 }
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 120px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
