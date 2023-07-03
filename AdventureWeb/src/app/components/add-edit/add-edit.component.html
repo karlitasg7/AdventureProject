@@ -31,7 +31,9 @@
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Birth date</mat-label>
-        <input matInput [matDatepicker]="pickerBirthDay" formControlName="birthDay" required>
+        <input matInput [matDatepicker]="pickerBirthDay" formControlName="birthDay" required
+               [min]="minBirthDay"
+               [max]="maxBirthDay">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="pickerBirthDay"></mat-datepicker-toggle>
         <mat-datepicker #pickerBirthDay></mat-datepicker>
@@ -148,7 +150,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Start date</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="startDate" required>
+        <input matInput [matDatepicker]="picker" formControlName="startDate" required [min]="minStartDate">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>

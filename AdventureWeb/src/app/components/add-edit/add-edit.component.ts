@@ -18,16 +18,24 @@ export class AddEditComponent implements OnInit {
   departments!: any[];
   shifts!: any[];
 
+  minStartDate?: string;
+  maxBirthDay: Date | null;
+  minBirthDay: Date | null = new Date(1930, 0, 1);
+
   constructor(
     private _fb: FormBuilder,
     private apiService: ApiService,
     private _dialogRef: MatDialogRef<AddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _coreService: CoreService
+    private _coreService: CoreService,
   ) {
+
+    this.maxBirthDay = new Date(new Date().setFullYear(new Date().getFullYear() - 18));
 
     if (!data) {
       this.changePosition = true;
+    } else {
+      this.minStartDate = data.startDate;
     }
 
     this.empForm = this._fb.group({
@@ -39,7 +47,7 @@ export class AddEditComponent implements OnInit {
       departmentId: new FormControl({value: '', disabled: !this.changePosition}, Validators.required),
       department: '',
       startDate: new FormControl({value: '', disabled: !this.changePosition}, Validators.required),
-      birthDay: '',
+      birthDay: new FormControl({value: '', max: this.maxBirthDay}, Validators.required),
       phoneNumber: '',
       emailAddressId: '',
       emailAddress: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')]],
@@ -135,7 +143,7 @@ export class AddEditComponent implements OnInit {
             return;
           }
 
-          if (this.empForm.value.startDate <= this.data.star) {
+          if (this.empForm.value.startDate <= this.data.startDate) {
             this._coreService.openSnackBar('The start date must be greater than the current');
             return;
           }
