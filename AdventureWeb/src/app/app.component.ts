@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {AddEditComponent} from './components/add-edit/add-edit.component';
+import {SalesReportComponent} from './components/sales-report/sales-report.component';
 import {ApiService} from './api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -115,6 +116,11 @@ export class AppComponent implements OnInit {
   }
 
   showSalesReport(id: number) {
+    this.dialog.open(SalesReportComponent, {
+      width: '800px',
+      height: '600px',
+      data: {employeeId: id},
+    });
 
   }
 
