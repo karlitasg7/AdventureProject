@@ -36,6 +36,17 @@ export class AddEditComponent implements OnInit {
       this.changePosition = true;
     } else {
       this.minStartDate = data.startDate;
+
+      if (typeof this.data.birthDay === "string") {
+        const parseBirthday = this.data.birthDay.split('-');
+        this.data.birthDay = new Date(parseBirthday[0], parseInt(parseBirthday[1]) - 1, parseBirthday[2]);
+      }
+
+      if (typeof this.data.startDate === "string") {
+        const parseStartDate = this.data.startDate.split('-');
+        this.data.startDate = new Date(parseStartDate[0], parseInt(parseStartDate[1]) - 1, parseStartDate[2]);
+      }
+
     }
 
     this.empForm = this._fb.group({
