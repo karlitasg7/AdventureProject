@@ -49,6 +49,7 @@ BEGIN
                   ON t7.StateProvinceID = t8.StateProvinceID
              JOIN Person.CountryRegion                     t9
                   ON t8.CountryRegionCode = t9.CountryRegionCode
-    WHERE t0.CurrentFlag = 1;
+    WHERE t0.CurrentFlag = 1
+    ORDER BY t0.BusinessEntityID DESC;
 
 END
