@@ -39,7 +39,7 @@ export class AddEditComponent implements OnInit {
     }
 
     this.empForm = this._fb.group({
-      employeeId: '',
+      employeeId: new FormControl({value: '', disabled: true}),
       firstName: '',
       middleName: '',
       lastName: '',
