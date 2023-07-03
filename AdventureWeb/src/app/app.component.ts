@@ -16,14 +16,14 @@ import {DeleteConfirmationComponent} from "./components/delete-confirmation/dele
 export class AppComponent implements OnInit {
 
   displayedColumns: string[] = [
-    'name',
+    'firstName',
     'jobTitle',
     'department',
     'startDate',
     'birthDay',
     'phoneNumber',
     'emailAddress',
-    'address',
+    'addressLine1',
     'action',
   ];
   dataSource!: MatTableDataSource<any>;
