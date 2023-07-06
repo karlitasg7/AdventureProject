@@ -140,22 +140,22 @@ export class AddEditComponent implements OnInit {
         } else {
 
           if (this.data.departmentId == this.empForm.value.departmentId) {
-            this._coreService.openSnackBar('You need to select a different department');
+            this._coreService.openSnackBarError('You need to select a different department');
             return;
           }
 
           if (this.data.jobTitle == this.empForm.value.jobTitle) {
-            this._coreService.openSnackBar('You need to set a different job title');
+            this._coreService.openSnackBarError('You need to set a different job title');
             return;
           }
 
           if (this.data.startDate == this.empForm.value.startDate) {
-            this._coreService.openSnackBar('You need to select a different start date');
+            this._coreService.openSnackBarError('You need to select a different start date');
             return;
           }
 
           if (this.empForm.value.startDate <= this.data.startDate) {
-            this._coreService.openSnackBar('The start date must be greater than the current');
+            this._coreService.openSnackBarError('The start date must be greater than the current');
             return;
           }
 

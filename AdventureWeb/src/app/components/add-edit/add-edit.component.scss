@@ -39,27 +39,3 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
 }
-
-.change-position {
-  display: inline-block;
-  padding: 10px 10px;
-  height: 20%;
-  background-color: #3B6BF8FF;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.change-position:hover {
-  background-color: #0056b3;
-}
-
-.change-position:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
-}

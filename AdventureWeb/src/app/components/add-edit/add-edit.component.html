@@ -123,12 +123,8 @@
       <mat-form-field appearance="outline">
         <mat-label>Job Title</mat-label>
         <input matInput type="text" formControlName="jobTitle" required>
+        <mat-icon matSuffix *ngIf="data" (click)="setChangePosition()">mode_edit</mat-icon>
       </mat-form-field>
-
-      <div class="change-position" *ngIf="data" (click)="setChangePosition()">
-        <span *ngIf="!changePosition">Change Position</span>
-        <span *ngIf="changePosition">Cancel</span>
-      </div>
     </div>
 
     <div class="row">
