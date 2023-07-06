@@ -15,7 +15,11 @@ BEGIN
                WHEN t0.Status = 6 THEN 'Cancelled'
         END                                                                                      AS statusName
          , t0.AccountNumber
-         , CONCAT(t1.AddressLine1, ' ', t1.City, ' ', t2.Name, ' ', t1.PostalCode, ' ', t3.Name) AS address
+         , t1.AddressLine1
+         , t1.City
+         , t2.Name                                                                               AS province
+         , t1.PostalCode
+         , t3.Name                                                                               AS country
          , t0.SubTotal
          , t0.TaxAmt
          , t0.SubTotal + t0.TaxAmt                                                               AS total
