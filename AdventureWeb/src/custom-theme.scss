@@ -33,3 +33,10 @@ $AdventureWeb-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($AdventureWeb-theme);
 
+.mat-mdc-snack-bar-container {
+  &.red-snackbar {
+    --mdc-snackbar-container-color: #f56a6a;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+}
