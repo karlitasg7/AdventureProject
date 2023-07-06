@@ -34,7 +34,6 @@ public class SQLSalesRepository implements SalesRepository {
         spFindAll.registerStoredProcedureParameter("EndDate", LocalDate.class, ParameterMode.IN);
         spFindAll.setParameter("EndDate", endDate);
 
-
         List<Object[]> results = spFindAll.getResultList();
 
         return results
@@ -50,9 +49,13 @@ public class SQLSalesRepository implements SalesRepository {
                 tuple[1].toString(),
                 tuple[2].toString(),
                 tuple[3].toString(),
-                ((Number) tuple[4]).doubleValue(),
-                ((Number) tuple[5]).doubleValue(),
-                ((Number) tuple[6]).doubleValue()
+                tuple[4].toString(),
+                tuple[5].toString(),
+                tuple[6].toString(),
+                tuple[7].toString(),
+                ((Number) tuple[8]).doubleValue(),
+                ((Number) tuple[9]).doubleValue(),
+                ((Number) tuple[10]).doubleValue()
         );
     }
 

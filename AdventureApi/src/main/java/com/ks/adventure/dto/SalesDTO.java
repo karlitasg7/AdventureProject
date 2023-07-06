@@ -13,6 +13,10 @@ public class SalesDTO {
     String statusName;
     String accountNumber;
     String address;
+    String city;
+    String province;
+    String postalCode;
+    String country;
     Double subtotal;
     Double taxAmount;
     Double total;
