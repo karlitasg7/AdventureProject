@@ -1,10 +1,11 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {ConfirmationDialogData} from "../delete-confirmation/delete-confirmation.component";
 import {FormControl} from "@angular/forms";
 import {ApiService} from "../../api.service";
 import {DatePipe} from '@angular/common'
 import {MatTableDataSource} from "@angular/material/table";
+import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-sales-report',
@@ -19,11 +20,15 @@ export class SalesReportComponent {
   startDate: FormControl;
   endDate: FormControl;
 
+  @ViewChild(MatSort) sort!: MatSort;
+
   displayedColumns: string[] = [
     'orderDate',
     'statusName',
     'accountNumber',
     'address',
+    'province',
+    'country',
     'subtotal',
     'taxAmount',
     'total'
@@ -78,6 +83,7 @@ export class SalesReportComponent {
       .subscribe({
         next: (res) => {
           this.dataSource = new MatTableDataSource(res);
+          this.dataSource.sort = this.sort;
 
           for (let i = 0; i < res.length; i++) {
             this.totalSales += res[i]['total'];

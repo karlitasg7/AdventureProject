@@ -15,7 +15,7 @@
 }
 
 .data {
-  font-size: 14px;
+  font-size: 20px;
   margin-top: 5px;
 }
 
@@ -122,4 +122,8 @@ table {
 
 .no-data {
   text-align: center;
+}
+
+.close-btn {
+  cursor: pointer;
 }
