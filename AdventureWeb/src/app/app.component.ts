@@ -17,6 +17,7 @@ import {DeleteConfirmationComponent} from "./components/delete-confirmation/dele
 export class AppComponent implements OnInit {
 
   displayedColumns: string[] = [
+    'action',
     'firstName',
     'jobTitle',
     'department',
@@ -25,7 +26,6 @@ export class AppComponent implements OnInit {
     'phoneNumber',
     'emailAddress',
     'addressLine1',
-    'action',
   ];
   dataSource!: MatTableDataSource<any>;
 
@@ -117,8 +117,8 @@ export class AppComponent implements OnInit {
 
   showSalesReport(id: number, firstName: string, lastName: string) {
     this.dialog.open(SalesReportComponent, {
-      width: '1200px',
-      height: '700px',
+      width: '1250px',
+      height: '850px',
       data: {employeeId: id, employeeName: firstName + ' ' + lastName},
     });
 

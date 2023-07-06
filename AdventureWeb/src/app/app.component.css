@@ -1,7 +1,3 @@
-.example-spacer {
-  flex: 1 1 auto;
-}
-
 .main-body {
   padding-top: 20px;
   margin: 0 auto;
@@ -20,9 +16,26 @@ mat-form-field {
 .container {
   display: flex;
   justify-content: flex-end;
-  padding-right: 120px;
+  position: relative;
+  bottom: 120px;
+  right: 8px;
+  z-index: 9999;
 }
 
-.spacer {
-  flex: 1 1 auto;
+.mat-column-addressLine1 {
+  width: 500px;
+}
+
+.table-container {
+  height: 700px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+td, th {
+  min-width: 275px;
 }
